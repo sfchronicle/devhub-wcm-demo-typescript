@@ -1,0 +1,303 @@
+@import (less) '../values.less';
+
+.chart {
+  position: relative;
+  margin: 40px 20px;
+  clear: both;
+}
+// DONT USE, WASHES OUT
+text {
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+.title {
+  font-family: @sans-bold;
+  font-size: 20px;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+.subhead {
+  font-family: @sans-book;
+  font-size: 17px;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+.source {
+  font-family: @sans-light;
+  font-size: 15px;
+  margin-top: 0.5rem;
+}
+.captionText {
+  line-height: 1.3;
+  margin: 0.5rem 0;
+}
+.legend {
+  background-color: #fff;
+  border-radius: 10px;
+  opacity: 0.85;
+  padding: 0.5rem 0;
+  width: 100%;
+
+  &Title {
+    font-family: @sans-bold;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+  }
+  div:global(.map-legend-container) {
+    display: flex;
+    margin-bottom: 0.25rem;
+  }
+  div:global(.legendBins) {
+    height: 15px;
+  }
+  &LabelContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  &Label {
+    font-family: @sans-book;
+    font-size: 14px;
+  }
+  #legendLabel2 {
+    text-align: right;
+  }
+}
+.tooltipContainer {
+  background-color: #fff;
+  border: 1px solid @dark-gray;
+  border-radius: 5px;
+  display: none;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  width: 180px;
+  z-index: 1;
+
+  .tooltipText {
+    font-family: @sans-light;
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+
+    p {
+      padding: 0;
+      font-size: 14px;
+
+      b {
+        font-family: @sans-med;
+      }
+    }
+  }
+  .tooltipText:first-child {
+    font-family: @sans-med;
+  }
+
+  .tooltipTitle {
+    font-family: @sans-light;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.sectionTitle {
+  font-family: @serif-bold;
+  font-size: @step-4;
+}
+.sectionSubhead {
+  font-family: @serif-book;
+  margin: 1rem auto;
+  max-width: 720px;
+}
+.updatedText {
+  color: #444444;
+  font-family: @sans-light;
+  font-size: 14px;
+  margin: 0.25rem 0;
+}
+.subhead {
+  font-family: @sans-book;
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 1rem auto;
+  max-width: 720px;
+
+  .boldSpan {
+    font-family: @sans-bold;
+  }
+}
+.embedLabel {
+  font-family: @sans-bold;
+  font-size: 18px;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+.embedSub {
+  font-family: @sans-book;
+  font-size: 14px;
+}
+.source {
+  font-family: @sans-light;
+  font-size: 15px;
+  margin-top: 0.5rem;
+}
+.boldSpan {
+  font-family: @serif-bold;
+}
+// section wrapper padding
+#voterTurnout, div:global(#sf-offices), div:global(#state-props), div:global(#sf-props) {
+  margin: 2rem auto;
+  padding: 0 var(--step--1);
+
+  @media (min-width: 500px) {
+    margin: 3.5rem auto;
+  }
+}
+.race {
+  max-width: 720px;
+}
+// maplibre section
+.map {
+  margin: 2rem auto 0;
+  max-width: 900px;
+
+  h3 {
+    font-family: @serif-bold;
+    font-size: var(--step-2);
+    text-align: center;
+    max-width: none;
+  }
+  .sectionSubhead {
+    font-size: 16px;
+    margin-top: 0.5rem;
+  }
+}
+
+// rcv, candidate race section
+.race {
+  margin: 1rem auto;
+
+  h4 {
+    font-family: @sans-bold;
+    font-size: 24px;
+    max-width: none;
+  }
+}
+
+// wrapper for SF races
+.sfRacesWrapper, .alamedaRacesWrapper {
+  margin: 1rem auto 0;
+  overflow-y: hidden;
+  position: relative;
+
+  // expand button wrapper
+  .buttonWrapper {
+    background: linear-gradient(0deg,#fff 61%,hsla(0,0%,100%,0));
+    bottom: 0;
+    height: 130px;
+    max-width: none;
+    padding-top: 70px;
+    position: absolute;
+    width: 100%;
+  }
+  .button {
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}
+.alamedaRacesWrapper {
+  max-height: 1830px;
+}
+.sfRacesWrapper {
+  max-height: 1680px;
+}
+.sfRacesWrapper.sfRacesWrapperShowAll, .alamedaRacesWrapper.alamedaRacesWrapperShowAll {
+  max-height: none;
+}
+// voter turnout
+#voterTurnout {
+
+  div:global(.chart-box) {
+    margin: 0 auto;
+  }
+  .map {
+    margin-top: 0;
+    h3 {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .legend {
+    padding: 0.5rem 1rem;
+    position: absolute;
+    right: -0%;
+    top: 0%;
+    width: 240px;
+  }
+  .sectionTitle, .map h3 {
+    text-align: center;
+  }
+  .map {
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 650px) {
+  .sfRacesWrapper {
+    max-height: 1560px;
+  }
+  .alamedaRacesWrapper {
+    max-height: 1320px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .legend {
+    right: -8%;
+  }
+  .chart {
+    margin: 30px auto;
+    max-width: 1600px;
+  }
+  .embed.chart {
+    max-width: 500px;
+    margin: 0;
+  }
+}
+@media @tablet {
+  .chart.props {
+    margin: 5px auto;
+  }
+  .legend {
+    width: 180px;
+  }
+}
+// EMBED
+main:global(.embed) {
+  .title {
+    font-family: @sans-bold;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .subhead {
+    font-family: @sans-book;
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    max-width: none;
+  }
+  .source {
+    color: #777777 !important;
+    font-family: @sans-book;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 0.5rem;
+  }
+}

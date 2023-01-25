@@ -13,6 +13,7 @@ import CreditsSection from '../components/defaults/creditssection'
 import Ad from '../components/defaults/ad'
 import Newsletter from '../components/defaults/newsletter'
 import SponsorBug from '../components/defaults/sponsorbug'
+import CongressChartWrapper from '../components/test-components/congresschartwrapper'
 import { applyScrollDepthTracking } from '../components/defaults/component-helpers/utilfunctions'
 let rawCredits;
 try {
@@ -83,10 +84,7 @@ const IndexPage = ({ data }) => {
             It's too easy."
           </p>
 
-          {/* Wrapping div supports "embed-" + center/left/right/full classes */}
-          <div className="embed-center">
-            <WCMImage wcm={20374215} alt="TKTKTK" lz={lazy} cap={"TKTKTK caption"} />
-          </div>
+          <CongressChartWrapper />
 
           <p>
             The Savage nodded, frowning. "You got rid of them. Yes, that's just

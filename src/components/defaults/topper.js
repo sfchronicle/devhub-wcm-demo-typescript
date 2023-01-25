@@ -73,14 +73,6 @@ const Topper = ({ meta }) => {
           </div>
         </section>
       </header>
-      <figure className={topperStyles.figure}>
-        {/* You can also use a 100vh/100vw with a normal img tag here, just make sure to set the container that way so we don't get layout shift */}
-        <WCMImage wcm={20374215} alt="TKTKTK" lz={false} />
-
-        {/* This prop gives the arrow an id to scroll to */}
-        <ScrollDown scrollTo="article" />
-        <figcaption className={topperStyles.topcap}>A man sitting on a hill with the Golden Gate Bridge in the background <span className={topperStyles.topcred}>(Scott Strazzante / San Francisco Chronicle)</span></figcaption>
-      </figure>
     </Fragment>
   )
 }
