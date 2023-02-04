@@ -16,13 +16,6 @@ import SponsorBug from '../components/defaults/sponsorbug'
 import CongressChartWrapper from '../components/test-components/congresschartwrapper'
 import { applyScrollDepthTracking } from '../components/defaults/component-helpers/utilfunctions'
 import MapLibre from '../components/test-components/maplibre'
-let rawCredits;
-try {
-	rawCredits = require('../data/credits.sheet.json')
-} catch (err){
-    // It's fine
-    rawCredits = null;
-}
 let related_links;
 try{
   related_links = require('../data/related_links.sheet.json').slice(1)
@@ -56,7 +49,7 @@ const IndexPage = ({ data }) => {
     site: { siteMetadata }
   } = data
 
-	const has_sponsor = storySettings[0].Is_Sponsored === 'TRUE'
+	const has_sponsor = false;
 
   return (
     <Layout meta={siteMetadata}>
@@ -106,7 +99,6 @@ const IndexPage = ({ data }) => {
       </main>
 
       <RelatedSection links={related_links} />
-      <CreditsSection />
     </Layout>
   )
 }
