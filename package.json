@@ -17,6 +17,7 @@
     "gatsby-transformer-json": "4.13.0",
     "jump.js": "1.0.2",
     "less": "4.1.1",
+    "maplibre-gl": "^2.4.0",
     "preact": "10.5.13",
     "preact-render-to-string": "5.2.0",
     "prop-types": "15.7.2",

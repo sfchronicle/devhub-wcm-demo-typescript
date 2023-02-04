@@ -15,6 +15,7 @@ import Newsletter from '../components/defaults/newsletter'
 import SponsorBug from '../components/defaults/sponsorbug'
 import CongressChartWrapper from '../components/test-components/congresschartwrapper'
 import { applyScrollDepthTracking } from '../components/defaults/component-helpers/utilfunctions'
+import MapLibre from '../components/test-components/maplibre'
 let rawCredits;
 try {
 	rawCredits = require('../data/credits.sheet.json')
@@ -85,6 +86,8 @@ const IndexPage = ({ data }) => {
           </p>
 
           <CongressChartWrapper />
+
+          <MapLibre />
 
           <p>
             The Savage nodded, frowning. "You got rid of them. Yes, that's just

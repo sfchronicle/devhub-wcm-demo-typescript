@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React from 'react'
 import {color, colorBase, colorVoting} from './helpers/legislaturechart-helpers'
 
 // REFERENCE: -----------------

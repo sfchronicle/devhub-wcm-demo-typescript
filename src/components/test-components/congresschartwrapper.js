@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
-import { getData } from './helpers/requesthelpers'
 import LegislatureChart from './legislaturechart'
 import LegislatureBar from './legislaturebar'
 import LegislatureLegend from './legislaturelegend'
-import * as ChartStyles from '../../styles/modules/chart.module.less'
 
 const enumerateCandidates = function(staticData, dynamicData, office, isLocal){
   let candidates = [];
@@ -16,7 +14,6 @@ const enumerateCandidates = function(staticData, dynamicData, office, isLocal){
   }
 
   // Sometimes candidates are directly on the key, sometimes they are nested inside "c", check both
-  
   let staticCand = staticData.c
   if (!staticCand){
     staticCand = staticData
@@ -144,8 +141,6 @@ const baseHouseCounts = {
 }
 
 const CongressChartWrapper = ({
-  dataStatic,
-  dataDynamic,
   threshold = 35,
   showTooltip = true,
   noSeats = false
@@ -172,6 +167,9 @@ const CongressChartWrapper = ({
   // - also have a sub index for those below threshold
   const [votingHouseCounts, setVotingHouseCounts] = useState({Dem: 0, GOP: 0, x: 0})
   const [votingSenateCounts, setVotingSenateCounts] = useState({Dem: 0, GOP: 0, x: 0})
+
+  const { data: dataStatic } = useSWR('https://files.sfchronicle.com/elex2022Midterm/nat_2022-11-08_static_nationwide_ap_results.json')
+  const { data: dataDynamic } = useSWR('https://files.sfchronicle.com/elex2022Midterm/nat_2022-11-08_dynamic_nationwide_ap_results.json', {refreshInterval: 30000})
 
   useEffect(() => {
     if(!dataStatic || !dataDynamic) return
@@ -347,7 +345,7 @@ const CongressChartWrapper = ({
     }
     <div className='container-2col'>
       <div className='chart-container'>
-        <label className={ChartStyles.title}>
+        <label className='leg-title'>
           U.S. Senate
         </label>
         <LegislatureBar
@@ -368,7 +366,7 @@ const CongressChartWrapper = ({
         }
       </div>
       <div className='chart-container'>
-        <label className={ChartStyles.title}>
+        <label className='leg-title'>
           U.S. House
         </label>
         <LegislatureBar
@@ -390,7 +388,7 @@ const CongressChartWrapper = ({
       </div>
     </div>
     {!noSeats &&
-      <div className={ChartStyles.source + ' legislature-footnote'}>
+      <div className={'leg-source legislature-footnote'}>
         Note: Senate counts for Democrats include two Independents who caucus with Democrats.
         Party affiliations for leading candidates are only shown when at least {threshold}% of the expected votes are received for a given seat. Louisiana has open primaries on Election Day, so final election results are not available until December.
       </div>
