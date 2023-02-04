@@ -3,6 +3,7 @@ import useSWR from 'swr'
 import LegislatureChart from './legislaturechart'
 import LegislatureBar from './legislaturebar'
 import LegislatureLegend from './legislaturelegend'
+import '../../styles/project.css'
 
 const enumerateCandidates = function(staticData, dynamicData, office, isLocal){
   let candidates = [];
