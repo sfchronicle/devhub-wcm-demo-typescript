@@ -16,6 +16,7 @@ import SponsorBug from '../components/defaults/sponsorbug'
 import CongressChartWrapper from '../components/test-components/congresschartwrapper'
 import { applyScrollDepthTracking } from '../components/defaults/component-helpers/utilfunctions'
 import MapLibre from '../components/test-components/maplibre'
+import MapLibreWithPoints from '../components/test-components/maplibre2'
 let related_links;
 try{
   related_links = require('../data/related_links.sheet.json').slice(1)
@@ -81,6 +82,8 @@ const IndexPage = ({ data }) => {
           <CongressChartWrapper />
 
           <MapLibre />
+
+          <MapLibreWithPoints />
 
           <p>
             The Savage nodded, frowning. "You got rid of them. Yes, that's just
