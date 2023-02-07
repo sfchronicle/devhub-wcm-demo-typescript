@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
-// TODO: Create 
+// Require in the points for the map
 const locationData = require('../../data/locations.sheet.json')
 const geoData = []
 for (let loc in locationData){
