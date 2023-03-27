@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-import { setRichieParam } from '../defaults/component-helpers/utilfunctions'
+import { setRichieParam } from './component-helpers/utilfunctions'
 
 // Add SFC utils
 import { appCheck } from 'sfc-utils'
@@ -49,7 +49,7 @@ const SafeLink = ({
     clickFunc = interceptClick
   }
   // If we have no function, add a dummy one so we don't error
-  if (!clickFunc){
+  if (!clickFunc) {
     clickFunc = () => {}
   }
 
@@ -65,9 +65,9 @@ const SafeLink = ({
           target={withinSite ? '_self' : '_blank'}
           rel={withinSite ? null : 'noreferrer'}
           onClick={(e) => {
-            if (clickFunc){
+            if (clickFunc) {
               clickFunc(e, onClick)
-            }   
+            }
           }}
           {...other}
         >
